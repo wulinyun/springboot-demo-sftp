@@ -14,12 +14,7 @@ import java.io.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SftpApplicationTests {
-
-    @Test
-    public void contextLoads() {
-    }
-
-
+    
     @Autowired
     private FileSystemService fileSystemService;
 
