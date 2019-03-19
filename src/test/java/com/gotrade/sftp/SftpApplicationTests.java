@@ -34,12 +34,19 @@ public class SftpApplicationTests {
         } else {
             System.out.println("failure.....");
         }
+
+        inputStream.close();
     }
 
     @Test
     public void download() throws Exception {
         File file = fileSystemService.downloadFile("document/4c392-34wsd/95/ID/Vesting approval-tax.docx");
-        System.out.println(file);
+        if (file == null) {
+            throw new FileNotFoundException("File not found!");
+        }
+        System.out.println(file.getName());
+
+        file.delete();
     }
 
     @Test
